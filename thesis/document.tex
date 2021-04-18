@@ -11,38 +11,13 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{listings}
-\usepackage{algorithmic}
-\usepackage{algorithm}
 \usepackage{pgf}
+\usepackage{geometry}
 %\usepackage{cite}
-
-\makeatletter
-\newenvironment{breakablealgorithm}
-{% \begin{breakablealgorithm}
-    \begin{center}
-        \refstepcounter{algorithm}% New algorithm
-        \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
-        \renewcommand{\caption}[2][\relax]{% Make a new \caption
-            {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
-            \ifx\relax##1\relax % #1 is \relax
-            \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
-            \else % #1 is not \relax
-            \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
-            \fi
-            \kern2pt\hrule\kern2pt
-        }
-    }{% \end{breakablealgorithm}
-        \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
-    \end{center}
-}
-\makeatother
 
 \usetikzlibrary{arrows}
 \usepackage{xeCJK}
 
-\floatname{algorithm}{算法}  
-\renewcommand{\algorithmicrequire}{\textbf{输入:}}  
-\renewcommand{\algorithmicensure}{\textbf{输出:}} 
 
 %opening
 \hypersetup{
@@ -51,7 +26,6 @@
     pdfkeywords = {your pdf keywords},
     pdfauthor   = {your name}
 }
-
 
 
 \begin{document}
@@ -77,66 +51,17 @@
 \chapter{绪论}
 \section{研究背景及意义}
 
-研究背景及意义，可用cite去引用。\cite{dean2008mapreduce}
+研究背景及意义，可用cite去引用。\cite{marxapplication}
 
 \lipsum
 
 \section{研究现状及挑战}
 
-研究现状及挑战。
+研究现状及挑战。\cite{dean2008mapreduce, bzj2006constcurative}
 
 \section{研究内容与论文结构}
 
 研究内容与论文结构。
-
-\chapter{插入算法的示例}
-
-可用如下方式插入算法流程：
-
-
-\begin{breakablealgorithm}
-    \caption{ACP 调度器}
-    \label{algorithm: ACP}
-        \begin{algorithmic}[1]
-        \REQUIRE{要调度的作业集合$J$和资源集合$R$}
-        \FOR{each r $\in$ R}
-        %\STATE{test the c\_exec\_idx and the r\_exec\_idx of r with several benchmarking tools}
-        \STATE{使用基准测试工具对$r$进行测试}
-        \STATE{获取$r$的$storage_r$和$compute\_power_r$的值}
-        \STATE{将$storage_r$和$compute\_power_r$写入到资源限制中}
-        \ENDFOR
-        \WHILE{true}
-        \STATE{根据上次运行的结果，更新任务约束}
-        \FOR{each r $\in$ R}
-        \IF{r.schedular $\neq$ NULL}
-        \IF{r.runningtask $\neq$ NULL}
-        \STATE{rt $\leftarrow$ r.runningtask}
-        \STATE{st $\leftarrow$ rt.starttime}
-        \STATE{et $\leftarrow$ rt.endtime}
-        \STATE{pd $\leftarrow$ rt.performancedemand}
-        \STATE{sr $\leftarrow$ rt.scheduledresource}
-        \STATE{根据(rt, st, et, pd, sr)更新约束条件}
-        \STATE{$\slash\slash$ 根据任务的开始时间，结束时间，性能需求和其运行资源的性能添加一条约束}
-        \ELSE
-        \STATE{r.runningtask $\leftarrow$ NULL}
-        \STATE{$\slash\slash$ 将该任务设置为已完成}
-        \STATE{将 r.runningtask 从 r.schedular 中移除}
-        \STATE{pj $\leftarrow$ r.parentjob}
-        \IF{pj.schedular = NULL}
-        \STATE{从$J$中删除pj}
-        \ENDIF
-        \ENDIF
-        \ENDIF
-        \ENDFOR
-        \STATE{新建一个带有资源约束的模型}
-        \STATE{将任务约束加入到OPL模型中}
-        \STATE{将$J$和$R$作为约束添加到数据中}
-        \STATE{求解OPL模型}
-        \STATE{按照得出的最优解对任务进行分配}
-        \STATE{等待新的事件出现}
-        \ENDWHILE
-    \end{algorithmic}
-\end{breakablealgorithm}
 
 \chapter{一级标题}
 
@@ -144,18 +69,75 @@
 
 \section{二级标题}
 
-二级标题
+{\hei 二级标题}
 
 \subsection{三级标题}
 
 三级标题
 
+\chapter{例子}
+
+\begin{quote}
+    \begin{verse}
+        我拿起烟斗装满叶烟，\\
+        \hspace{1em}吞云吐雾消磨时间。\\
+        人在那坐着，却飘走了思想------\\
+        \hspace{1em}它飘向一幅画，晦黯而忧伤：\\
+        \hspace{2em}那画告诉我这是多么相像，\\
+        \hspace{2em}我和这烟斗一模一样。\\
+        \vspace{1em}
+        
+        这喷香溢郁的烟斗同我相仿，\\
+        \hspace{1em}都不过是尘芥不过是土壤;\\
+        我最终也要归为尘灰。\\
+        \hspace{1em}烟斗落地,没等听到声响，\\
+        \hspace{2em}就已经拦腰摔断,不幸遭殃;\\
+        \hspace{2em}相同的命运我也将承当。\par
+        \vspace{1em}
+        
+        洁白的烟斗没有污斑,\\
+        \hspace{1em}从未玷染，从未弄脏。\\
+        \hspace{2em}可总有一天会命归无常, \\
+        \hspace{1em}在草地下奄埋这副皮囊;\\
+        \hspace{2em}我的肉体将变黑，一副晦暗相，\\
+        \hspace{2em}就象这烟斗,若是它使用得经常。\\
+        \vspace{1em}
+        
+        当烟斗被点燃,闪耀着火光，\\
+        \hspace{1em}瞧,它们立刻就冒出青烟袅袅飘荡;\\
+        \hspace{2em}轻烟散进空气,无处寻访，\\
+        \hspace{1em}烟斗里便只剩有灰烬留藏。\\
+        \hspace{2em}虚名也将消泯,正同那青烟一样，\\
+        \hspace{2em}而躯体最终只不过化作上壤。\\
+        \vspace{1em}
+        
+        吸烟时这种事也发生得经常:\\
+        \hspace{1em}架上的塞烟器不翼而飞,给你添忙，\\
+        \hspace{2em}这下你只好上手，虽然不很便当，\\
+        \hspace{1em}可手指伸进烟锅,难免要被烫伤。\\
+        \hspace{2em}既然烟斗里都有痛苦伏藏，\\
+        \hspace{2em}地狱里的痛苦将会何其难当!\\
+        \vspace{1em}
+        
+        由对烟斗的沉思,导向了别的玄想，\\
+        \hspace{1em}沉溺在格致冥思中，\\
+        \hspace{2em}也有益于身心的健康;\\
+        \hspace{1em}这样吞云吐雾,心中着实舒畅,\\
+        \hspace{2em}因此无论在国内、国外、在陆地或海洋，\\
+        \hspace{2em}我都要一边抽我的烟斗,一边坚定对上帝的信仰。\\
+    \end{verse}
+\end{quote}
+
+
+
 %最后设置格式，插入参考文献。
 \defaultfont
-\bibliographystyle{gbt7714-2005}
+\bibliographystyle{./gbt7714-author-year} %用GBT7714-2015格式进行排版。若未安装此拓展包导致报错，可以将\bibliographystyle改为plain，如下一行所示
+%\bibliographystyle{plain}
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{参考文献}
+\nocite{*} %展示所有的参考文献，即使正文中没有显式引用过。如果不需要，请注释掉这一行。
 \bibliography{document}
 %插入致谢
 \chapter*{致 \qquad 谢}
@@ -166,10 +148,5 @@
 ...
 
 求学生涯暂告段落，但求知之路却永无止境。我将倍加珍惜大学生活给予我的珍贵财富，不忘初心，砥砺前行！
-\chapter*{本科期间发表论文和科研情况}
-\addcontentsline{toc}{chapter}{本科期间发表论文和科研情况}
-\thispagestyle{empty}
-
-...
 
 \end{document}

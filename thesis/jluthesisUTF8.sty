@@ -16,7 +16,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{jluthesisUTF8}
-  [2009/03/01 v0.01 Master's thesis template for JLU]
+  [2021/04/18 v0.01 Bachelor's thesis template for JLU]
 
 \newif\if@JLU@debug
 \newif\if@JLU@ebook
@@ -228,7 +228,7 @@
 % 段间距
 \setlength{\parskip}{0.1em}
 
-\renewcommand\contentsname{\song \bf 目\qquad 录 \\ \ }
+\renewcommand\contentsname{\vspace{1em}\sanhao \hei 目\qquad 录 \\ \ }
 \renewcommand\listfigurename{插\quad 图\quad 目\quad 录}
 \renewcommand\listtablename{表\quad 格\quad 目\quad 录}
 \renewcommand\bibname{参\quad 考\quad 文\quad 献}
@@ -250,7 +250,7 @@
   \renewcommand{\CJKpostchaptername}{\relax}
 }
 
-\newcommand{\JLUrightmark}{吉林大学\ 计算机科学与技术学院\ 毕业论文}
+\newcommand{\JLUrightmark}{吉林大学\ 数学学院\ 毕业论文}
 
 \setcounter{secnumdepth}{5}  % 章节深度
 \setcounter{tocdepth}{3}     % 目录深度
@@ -304,16 +304,16 @@
 %   sep：标题号与标题文字之间距离，before: 标题文字之前运行的代码
 % \titlespacing{command}{<leftskip>}{<beforeskip>}{<afterskip>}
 %   leftskip：左缩进；beforeskip：标题前垂直空白；afterskip：标题与正文间垂直空白
-\titleformat{\chapter}{\centering\sanhao\bf\hei}{\CJKchaptername}{1em}{}
-\titlespacing{\chapter}{0pt}{8pt}{16pt}
+\titleformat{\chapter}{\centering\xiaoer\bf\hei}{\CJKchaptername}{1em}{}
+\titlespacing{\chapter}{0pt}{1em}{1em}
 
-\titleformat{\section}{\sihao\bf\hei}{\thesection}{0.5em}{}
-\titlespacing{\section}{0pt}{13pt}{13pt}
+\titleformat{\section}{\sanhao\bf\hei}{\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{0.5em}{0.5em}
 
 \titleformat{\subsection}{\xiaosi\bf\hei}{\thesubsection}{0.5em}{}
 \titlespacing{\subsection}{0pt}{8pt}{7pt}
 
-\titleformat{\subsubsection}{\xiaosi\hei}{\thesubsubsection}{0.5em}{}
+\titleformat{\subsubsection}{\xiaosi\bf\song}{\thesubsubsection}{0.5em}{}
 \titlespacing{\subsubsection}{0pt}{3pt}{2pt}{}
 
 % set up the tableofcontents format
@@ -432,7 +432,7 @@
 \newcommand{\makecover}{%
   \begin{titlepage}
     % 封面另外单作
-    %\JLUcover
+    \JLUcover
 
     % 扉页
     %\JLUtitlepage
@@ -461,53 +461,70 @@
   \pdfbookmark[0]{封皮}{JLUcover}
   \thispagestyle{empty}
 
-  \newlength{\jlutextwidthone}
-  \newlength{\jlutextwidthtwo}
-
-  \song \xiaosi \bfseries
-  \parbox[t][2.2cm][t]{\textwidth}{
-    \settowidth{\jlutextwidthone}{论文分类号}
-    \settowidth{\jlutextwidthtwo}{研究生学号}
-
-    \makebox[\jlutextwidthone][s]{论文分类号} \makebox[6cm][l]{：\@classification}%
-    \makebox[\jlutextwidthtwo][s]{单位代码}   \makebox[2cm][l]{：\@collegenumber}\\
-    \makebox[\jlutextwidthone][s]{密级}       \makebox[6cm][l]{：\@securitylevel}%
-    \makebox[\jlutextwidthtwo][s]{研究生学号}  \makebox[2cm][l]{：\@studnumber}%
-  }
-  \vspace{1.0cm}
+%  \newlength{\jlutextwidthone}
+%  \newlength{\jlutextwidthtwo}
+%
+%  \song \xiaosi \bfseries
+%  \parbox[t][2.2cm][t]{\textwidth}{
+%    \settowidth{\jlutextwidthone}{论文分类号}
+%    \settowidth{\jlutextwidthtwo}{研究生学号}
+%
+%    \makebox[\jlutextwidthone][s]{论文分类号} \makebox[6cm][l]{：\@classification}%
+%    \makebox[\jlutextwidthtwo][s]{单位代码}   \makebox[2cm][l]{：\@collegenumber}\\
+%    \makebox[\jlutextwidthone][s]{密级}       \makebox[6cm][l]{：\@securitylevel}%
+%    \makebox[\jlutextwidthtwo][s]{研究生学号}  \makebox[2cm][l]{：\@studnumber}%
+%  }
+  \rule{0ex}{0ex} %phantom charactor
 
   \begin{center}
-    \li \yihao 吉~~~~~林~~~~~大~~~~~学
-
-    \li \erhao 硕~~~~士~~~~学~~~~位~~~~论~~~~文
-    \vspace{2.5cm}
+%    \hei \yihao 吉~~~~~林~~~~~大~~~~~学
+%
+%    \hei \erhao 学~~~~士~~~~学~~~~位~~~~论~~~~文
+%    \vspace{2.5cm}
     
     
-    \hei \sanhao \@ctitle
-    \vspace{0.5cm}
+    \vspace{5.0cm}
+    \hei \erhao \@ctitle
+    \vspace{1.0cm}
 
-    \textsf{\xiaosan \mdseries \@etitle}        % 手动输入英文标题需要      
+    \textsf{\xiaoer \mdseries \@etitle}        % 手动输入英文标题需要      
   \end{center}
-  \vspace{2.0cm}
+  \vspace{5.0cm}
 
-  \renewcommand{\baselinestretch}{1.2} \small \normalsize
+  \newlength{\fjlutextwidthone}
+  \newlength{\fjlutextwidthtwo}
+
   \song \sanhao \bfseries
-  \settowidth{\jlutextwidthone}{作者姓名}
-  \hspace{2cm}\makebox[\jlutextwidthone][s]{作者姓名}：\@cauthor
+  \renewcommand{\baselinestretch}{1.5}\small\normalsize
+  \parbox[t]{\textwidth}{
+    \settowidth{\fjlutextwidthone}{学生教学号}
 
-  \hspace{2cm}\makebox[\jlutextwidthone][s]{专业}：\@csubject
+    \makebox[\fjlutextwidthone][s]{学生姓名} \makebox[6cm][l]{：}\\%
+    \makebox[\fjlutextwidthone][s]{学院}   \makebox[6cm][l]{：}\\
+    \makebox[\fjlutextwidthone][s]{学生班级} \makebox[6cm][l]{：}\\%
+    \makebox[\fjlutextwidthone][s]{专业}   \makebox[6cm][l]{：}\\
+    \makebox[\fjlutextwidthone][s]{学生教学号}       \makebox[6cm][l]{：}\\%
+    \makebox[\fjlutextwidthone][s]{指导教师}  \makebox[6cm][l]{：}%
+   }
 
-  \hspace{2cm}\makebox[\jlutextwidthone][s]{导师姓名}
-
-  \hspace{2cm}\makebox[\jlutextwidthone][s]{及职称}：\@csupervisor~~\@csupervisorpost
-
-  \vfill                % 填充此间空白
-  
-  \renewcommand{\baselinestretch}{1.0} \small \normalsize
-  \song \sanhao \bfseries
-  \hspace{1cm}学位类别：\@cdegree
-
-  \hspace{1cm}论文起止年月：\@cdate
+%  \renewcommand{\baselinestretch}{1.2} \small \normalsize
+%  \song \sanhao \bfseries
+%  \settowidth{\jlutextwidthone}{作者姓名}
+%  \hspace{2cm}\makebox[\jlutextwidthone][s]{作者姓名}：\@cauthor
+%
+%  \hspace{2cm}\makebox[\jlutextwidthone][s]{专业}：\@csubject
+%
+%  \hspace{2cm}\makebox[\jlutextwidthone][s]{导师姓名}
+%
+%  \hspace{2cm}\makebox[\jlutextwidthone][s]{及职称}：\@csupervisor~~\@csupervisorpost
+%
+%  \vfill                % 填充此间空白
+%  
+%  \renewcommand{\baselinestretch}{1.0} \small \normalsize
+%  \song \sanhao \bfseries
+%  \hspace{1cm}学位类别：\@cdegree
+%
+%  \hspace{1cm}论文起止年月：\@cdate
   
 }}  % end define \JLUcover
 
@@ -572,9 +589,9 @@
     要贡献的个人或集体，均已在文中以明确的方式注明。本人完全意识
     到本承诺书的法律结果由本人承担。\\ \\ \\ \\*[0.5cm]
 
-    \hspace{3cm}学士学位论文（设计）作者签名：
+    \hspace{6cm}承~诺~人：
 
-    \hspace{7cm}2018 年 5 月 20 日
+    \hspace{7cm}2021 年 5 月 20 日
   }
 } % end define \originalstatement
 
@@ -629,24 +646,24 @@
   \newpage
   \thispagestyle{empty}
   \pagestyle{empty}
-  \pdfbookmark[0]{摘要}{thesissummary}
+  \pdfbookmark[0]{中文摘要}{thesissummary}
   \renewcommand{\baselinestretch}{1.5}\small\normalsize   % 1.5倍行距
 
   \begin{center}
-    \hei\sanhao\noindent 摘要
+    \hei\sihao\noindent 中文摘要
   \end{center}
   \vspace{1em}
-  \begin{center}
-    \hei\xiaosan\noindent \@ctitle
-  \end{center}
-  \vspace{1em}
+%  \begin{center}
+%    \hei\xiaosi\noindent \@ctitle
+%  \end{center}
+%  \vspace{1em}
 
   {\song\xiaosi \@cthesissummary}
 
   \vspace{2.0em}
 
-  {\hei\sihao\noindent 
-    关键字：\hei \@ckeywords}
+  {\song\xiaosi\noindent 
+    {\bf 关键字：}\@ckeywords}
 }  % end define \thesissummary
 
 
@@ -662,20 +679,20 @@
   \renewcommand{\baselinestretch}{1.5}\small\normalsize   % 1.5倍行距
 
   \begin{center}
-    \xiaosan\noindent \bf Abstract
+    \sihao\noindent \hei 外文摘要
   \end{center}
   \vspace{1em}
-  \begin{center}
-    \xiaosan\noindent \@etitle
-  \end{center}
-  \vspace{1em}
+%  \begin{center}
+%    \xiaosi\rm\noindent \@etitle
+%  \end{center}
+%  \vspace{1em}
 
   {\xiaosi \@ethesissummary}
 
   \vspace{2.0em}
 
-  {\sihao\noindent 
-    Keywords: \@ekeywords}
+  {\xiaosi\rm\noindent 
+    {\bf Keywords:} \@ekeywords}
 }  % end define \thesissummary
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
