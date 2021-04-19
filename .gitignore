@@ -241,8 +241,16 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 
-#emacs tempfile
+# emacs tempfile
 *~
 
-#MacOS file
+# MacOS file
 .DS_Store
+
+# editor
+*\#
+
+# the specific output file
+docs/document.pdf
+
+

@@ -476,7 +476,6 @@
 %  }
   \rule{0ex}{0ex} %phantom charactor
 
-  \begin{center}
 %    \hei \yihao 吉~~~~~林~~~~~大~~~~~学
 %
 %    \hei \erhao 学~~~~士~~~~学~~~~位~~~~论~~~~文
@@ -484,11 +483,13 @@
     
     
     \vspace{5.0cm}
-    \hei \erhao \@ctitle
+    \begin{center}
+        \hei \erhao \@ctitle
+    \end{center}
     \vspace{1.0cm}
-
-    \textsf{\xiaoer \mdseries \@etitle}        % 手动输入英文标题需要      
-  \end{center}
+    \begin{center}
+        \textsf{\xiaoer \mdseries \@etitle}        % 手动输入英文标题需要      
+    \end{center}
   \vspace{5.0cm}
 
   \newlength{\fjlutextwidthone}
