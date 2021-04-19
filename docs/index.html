@@ -11728,7 +11728,26 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<p> Hello </p>
+<h1>JLU-MATH-Thesis</h1>
+<p><strong>吉林大学数学学院本科生毕业论文LaTeX模版</strong></p>
+<p>本项目是从<a href="https://github.com/x86vk/JLU-CCST-Thesis">x86vk/JLU-CCST-Thesis</a>以及更早的<a href="https://code.google.com/archive/p/jlu-thesis/" rel="nofollow">JLU-Thesis</a>上衍生的LaTeX模版，随个人毕业论文需求整理更新。</p>
+<p>相比x86vk/JLU-CCST-Thesis，主要改动有：</p>
+<ul>
+<li>修改了题目、文字大小和间距等格式，使其尽量满足学院的要求;</li>
+<li>删减了在数学论文中不常用的算法排版样式，并同时设置了定理和证明的格式;</li>
+<li>使用<a href="https://github.com/CTeX-org/gbt7714-bibtex-style">CTeX-org/gbt7714-bibtex-style</a>代替原本设定的bibtex格式，以满足参考文献顺序的需求;</li>
+<li>添加了一些<s>没有什么用的</s>例子。</li>
+</ul>
+<p>经测试本项目代码与TeXLive-2016附带的<code>xelatex</code>版本兼容。<a href="./document.pdf">查看示例</a></p>
+<p>本人水平有限，欢迎提议和Pull Request改进。</p>
+<h3></a>使用方法</h3>
+<ol>
+<li>从<a href="https://github.com/sclereid/JLU-MATH-Thesis">主页</a>下载项目的源代码。</li>
+<li>在<code>thesis/document.tex</code>中编辑论文正文。</li>
+<li>在<code>thesis/preface/cover.tex</code>中设置题目、摘要等。</li>
+<li>编译 <code>thesis/document.tex</code>。</li>
+</ol>
+<p>编译的顺序为<code>xelatex</code>一遍，<code>bibtex</code>一遍，然后<code>xelatex</code>两遍。也可以利用IDE或者在<code>thesis/</code>文件夹中执行<code>build.sh</code>脚本来编译。</p>
   
 </div>
 </div>
