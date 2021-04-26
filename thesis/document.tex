@@ -29,26 +29,29 @@
 {\kai}%〈Body font〉
 {}%〈Indent amount〉
 {\bf}%〈Theorem head font〉
-{:}%〈Punctuation after theorem head〉
+{.}%〈Punctuation after theorem head〉
 {.5em}%〈Space after theorem head〉
 {}%〈Theorem head spec(can be left empty, meaning ‘normal’)〉
 \theoremstyle{cthmstyle}
 \newtheorem{thm}{定理}
-\newtheorem{defn}{定义}
 \newtheorem{lem}{引理}
 \newtheorem{cor}{推论}
 \newtheorem{prop}{命题}
 
-
 \newtheorem*{thm*}{定理}
-\newtheorem*{defn*}{定义}
 \newtheorem*{lem*}{引理}
 \newtheorem*{cor*}{推论}
 \newtheorem*{prop*}{命题}
 
+\theoremstyle{definition}
+\newtheorem{defn}{定义}
+\newtheorem*{defn*}{定义}
+
 \theoremstyle{remark}
 \newtheorem{rem}{注释}
 \newtheorem*{rem*}{注释}
+\newtheorem{example}{例}
+\newtheorem*{example*}{例}
 
 \renewcommand{\proofname}{\rm\kai 证明}
 
