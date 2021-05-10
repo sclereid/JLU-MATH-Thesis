@@ -16,7 +16,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{jluthesisUTF8}
-  [2021/04/18 v0.01 Bachelor's thesis template for JLU]
+  [2021/05/11 v0.7.1 Bachelor's thesis template for JLU]
 
 \newif\if@JLU@debug
 \newif\if@JLU@ebook
@@ -428,6 +428,7 @@
 \def\ekeywords#1{\def\@ekeywords{#1}}
 \def\@ekeywords{}
 
+
 % 定义前言部分
 \newcommand{\makecover}{%
   \begin{titlepage}
@@ -445,9 +446,9 @@
     %\titlestatement
 
     % 内容提要
-    \thesissummary
+    %\thesissummary
     
-    \theesissummary
+    %\theesissummary
     
   \end{titlepage}
 }
@@ -491,6 +492,14 @@
         \textsf{\xiaoer \mdseries \@etitle}        % 手动输入英文标题需要      
     \end{center}
   \vspace{5.0cm}
+  
+%  \begin{center}
+%    
+%    \hei \sanhao \@ctitle
+%    \vspace{0.5cm}
+%
+%    \textsf{\xiaosan \mdseries \@etitle}        % 手动输入英文标题需要      
+%  \end{center}
 
   \newlength{\fjlutextwidthone}
   \newlength{\fjlutextwidthtwo}
@@ -590,9 +599,9 @@
     要贡献的个人或集体，均已在文中以明确的方式注明。本人完全意识
     到本承诺书的法律结果由本人承担。\\ \\ \\ \\*[0.5cm]
 
-    \hspace{6cm}承~诺~人：
+    \hspace{6cm}承~诺~人：\@cauthor
 
-    \hspace{7cm}2021 年 5 月 20 日
+    \hspace{7cm}\@cdate
   }
 } % end define \originalstatement
 

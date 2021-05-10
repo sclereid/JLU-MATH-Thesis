@@ -11712,6 +11712,24 @@ div#notebook {
     page-break-inside: avoid;
   }
 }
+
+div#licensebox {
+/*    color: red;*/
+    margin: 20px;
+}
+
+div#licensebox iframe {
+    width: 70%;
+}
+
+a.filelink {
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -11736,10 +11754,11 @@ div#notebook {
 <li>修改了题目、文字大小和间距等格式，使其尽量满足学院的要求;</li>
 <li>删减了在数学论文中不常用的算法排版样式，并同时设置了定理和证明的格式;</li>
 <li>使用<a href="https://github.com/CTeX-org/gbt7714-bibtex-style">CTeX-org/gbt7714-bibtex-style</a>代替原本设定的bibtex格式，以满足参考文献顺序的需求;</li>
-<li>修改了封面样式，虽然目前还不太好看；</li>
-<li>添加了一些<s>没有什么用的</s>例子。</li>
+<li>修改了封面样式（仅限于预览，正式提交打印请用学校提供的封面），虽然目前还不太好看；</li>
+<li>添加了一些<s>没有什么用的</s>例子；</li>
+<li>修改了目录、摘要、正文、参考文献等的顺序，使其与要求一致。</li>
 </ul>
-<p>经测试本项目代码与TeXLive-2016附带的<code>xelatex</code>版本兼容。<a href="./document.pdf">查看示例</a></p>
+<p>经测试本项目代码与TeXLive-2016附带的<code>xelatex</code>版本兼容。<a href="./document.pdf" class="filelink">查看示例</a></p>
 <p>本人水平有限，欢迎提议和Pull Request改进。</p>
 <h3></a>使用方法</h3>
 <ol>
@@ -11749,7 +11768,17 @@ div#notebook {
 <li>编译 <code>thesis/document.tex</code>。</li>
 </ol>
 <p>编译的顺序为<code>xelatex</code>一遍，<code>bibtex</code>一遍，然后<code>xelatex</code>两遍。也可以利用IDE或者在<code>thesis/</code>文件夹中执行<code>build.sh</code>脚本来编译。</p>
-  
+
+<br>
+
+<h3>免责声明 </h3>
+<p>本模版由个人修改维护，仅为满足自己的毕业论文需要，不提供任何保障。如果因为使用模版造成损失，包括但不限于格式错误、文件损坏等，拒不承担一切责任。</p>
+
+<div id="licensebox">
+  <p style="margin-bottom: 5px;">完整许可证(MIT)</p>
+<iframe src="../LICENSE.txt"></iframe>
+</div>
+
 </div>
 </div>
 </div>
