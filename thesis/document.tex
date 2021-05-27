@@ -1,3 +1,5 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX TS-program = xelatex
 \documentclass[openany,oneside]{book}
 
 \usepackage{jluthesisUTF8}
@@ -289,9 +291,10 @@
 \defaultfont
 \bibliographystyle{./gbt7714-author-year} %用GBT7714-2015格式进行排版。若未安装此拓展包导致报错，可以将\bibliographystyle改为plain，如下一行所示
 %\bibliographystyle{plain}
+
+\clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{参考文献}
-\rule{0pt}{0pt}\par
 \nocite{*} %展示所有的参考文献，即使正文中没有显式引用过。如果不需要，请注释掉这一行。
 \bibliography{document}
 

@@ -16,7 +16,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{jluthesisUTF8}
-  [2021/05/11 v0.7.1 Bachelor's thesis template for JLU]
+  [2021/05/27 v0.8.0 Bachelor's thesis template for JLU]
 
 \newif\if@JLU@debug
 \newif\if@JLU@ebook
@@ -650,12 +650,12 @@
 } % end \contributionstatement
 
 % half of OK
-% 内容提要(置于目录前)
+% 内容提要(置于目录前) %现在根据规范改到目录后了
 % define \thesissummary
 \newcommand{\thesissummary}{
   \newpage
-  \thispagestyle{empty}
-  \pagestyle{empty}
+%  \thispagestyle{empty} %注释掉以显示罗马数字页码
+%  \pagestyle{empty}  %不该这样写，会影响全局的页面布局
   \pdfbookmark[0]{中文摘要}{thesissummary}
   \renewcommand{\baselinestretch}{1.5}\small\normalsize   % 1.5倍行距
 
@@ -683,8 +683,8 @@
 % define \thesissummary
 \newcommand{\theesissummary}{
   \newpage
-  \thispagestyle{empty}
-  \pagestyle{empty}
+%  \thispagestyle{empty}
+%  \pagestyle{empty}
   \pdfbookmark[0]{Abstract}{thesissummary}
   \renewcommand{\baselinestretch}{1.5}\small\normalsize   % 1.5倍行距
 
